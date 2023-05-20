@@ -5,90 +5,11 @@
   </head>
   <body>
     <py-script>
-      import smtplib
-import threading
-import time
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-
-email_subject = "Welcome to Something By Someone"
-
-email_body = """<!DOCTYPE html>
-<style>
-      body {
-        background-color: black;
-      }
-      h1, h2 {
-      color: white;
-      font-family: "Arial";
-      }
-      p {
-      overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  color: white;
-  word-wrap: break-word;
-  word-break: break-all;
-  font-family: "Arial";
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-      ::selection {
-  color: red;
-  background: yellow;
-}
-    </style><body>
-    <center><h1>Welcome to <i>Something By Someone</i></h1>
-    <h2>We're Here to Help You.</h2>
-    <p>We hope this email finds you well. We are writing to introduce our business to you and to express our gratitude for the opportunity to serve you. Our company specializes in providing innovative and high-quality solutions for businesses looking to improve their operations and increase their profitability.
-With years of experience in the industry, our team of experts has a deep understanding of the challenges faced by businesses like yours. We offer a range of services that can help you streamline your processes, <i>enhance your marketing strategies, and improve your customer engagement</i>.
-At our company, we pride ourselves on our commitment to excellence and our ability to deliver results that exceed our clients' expectations. We believe that by partnering with us, you can take your business to the next level and achieve your goals.</p><br><p>
-Thank you for considering our business. We look forward to the opportunity to work with you and to helping you achieve success.</p><br>
-    <p>You can visit our website here: <a style="color: white;"href="https://somethingbysomeone.com/" target="_blank">Something By Someone</a></p>
-    </center></body>
-    """
-
-# Set up the email message object
-email_msg = MIMEMultipart()
-email_msg['Subject'] = email_subject
-email_msg['From'] = 'SomethingBySomeone@outlook.com'
-email_msg['To'] = 'fmn01@tsatstudent.org.uk'
-email_msg.attach(MIMEText(email_body, 'html'))
-
-
-smtp_server = 'smtp-mail.outlook.com'
-smtp_port = 587
-smtp_username = 'SomethingBySomeone@outlook.com'
-smtp_password = 'Ba28052007'
-
-def send_msg():
-    with smtplib.SMTP(smtp_server, smtp_port) as smtp:
-        smtp.starttls()
-        smtp.login(smtp_username, smtp_password)
-        for i in range(100):
-            smtp.send_message(email_msg)
-            print(f'Sending {i+1}')
-a = threading.Thread(target=send_msg)
-b = threading.Thread(target=send_msg)
-a.start()
-a.join()
-
-
+      import tkinter as tk
+      y = tk.Tk()
+      x = tk.Text(y, text="Enter email")
+      x.pack()
+      y.mainloop()
     </py-script>
     <h1>Hello everyone!</h1>
   </body>
